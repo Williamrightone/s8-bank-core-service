@@ -19,6 +19,6 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public RestfulResponse<Page<TransactionEntity>> getTransactionList(PageRequest pageRequest) {
 
-        return new RestfulResponse<>(transactionInfoService.getTransactionList(pageRequest.getPage(), pageRequest.getSize()));
+        return new RestfulResponse<>(transactionInfoService.getTransactionList(pageRequest));
     }
 }
