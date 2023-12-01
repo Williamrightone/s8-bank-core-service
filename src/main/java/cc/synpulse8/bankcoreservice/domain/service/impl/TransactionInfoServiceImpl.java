@@ -19,10 +19,10 @@ public class TransactionInfoServiceImpl implements TransactionInfoService {
     TransactionEntityRepository transactionEntityRepository;
 
     @Override
-    public Page<TransactionEntity> getTransactionList(int page, int size) {
+    public Page<TransactionEntity> getTransactionList(cc.synpulse8.bankcoreservice.presentation.dto.PageRequest pageRequest) {
 
-        Pageable pageable = PageRequest.of(page, size);
+        Pageable pageable = PageRequest.of(pageRequest.getPage(), pageRequest.getSize());
 
-        return transactionEntityRepository.findAll(pageable);
+        return transactionEntityRepository.findAllByValueDateBetween(pageRequest.getStartDate(), pageRequest.getEndDate(), pageable);
     }
 }
