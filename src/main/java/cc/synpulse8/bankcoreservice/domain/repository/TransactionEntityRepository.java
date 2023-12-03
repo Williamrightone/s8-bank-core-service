@@ -11,6 +11,6 @@ import java.time.LocalDate;
 @Repository
 public interface TransactionEntityRepository extends JpaRepository<TransactionEntity, String> {
 
-    Page<TransactionEntity> findAllByValueDateBetween(LocalDate startDate, LocalDate endDate, Pageable pageable);
+    Page<TransactionEntity> findAllByAccountIBANAndValueDateBetween(String accountIBAN, LocalDate startDate, LocalDate endDate, Pageable pageable);
 
 }
