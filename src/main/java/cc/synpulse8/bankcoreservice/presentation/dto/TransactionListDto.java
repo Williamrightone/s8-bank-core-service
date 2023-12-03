@@ -10,4 +10,8 @@ public class TransactionListDto {
 
     List<Transactions> transactions;
 
+    int totalPages;
+
+    long totalElements;
+
 }
