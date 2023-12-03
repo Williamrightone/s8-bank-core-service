@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class PageRequest {
+public class TransactionPageRequest {
 
     private int page;
 
@@ -14,5 +14,7 @@ public class PageRequest {
     private LocalDate startDate;
 
     private LocalDate endDate;
+
+    private String iban;
 
 }
